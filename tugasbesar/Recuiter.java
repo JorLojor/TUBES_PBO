@@ -31,4 +31,9 @@ public class Recuiter extends User {
         // yang nantinya digunakan untuk mengirim invoice ke jobseeker
     }
 
+    public void displayRegistJobseeker() {
+        System.out.println("Display Regist Jobseeker");
+        // yang nantinya digunakan untuk melihat daftar jobseeker yang sudah mendaftar
+        // ke perusahaan
+    }
 }
