@@ -36,4 +36,5 @@ public class Recuiter extends User {
         // yang nantinya digunakan untuk melihat daftar jobseeker yang sudah mendaftar
         // ke perusahaan
     }
+
 }

@@ -1,12 +1,18 @@
 package tugasbesar;
 
-public class Jobseeker extends User {
+import java.util.ArrayList;
+
+public class JobSeeker extends User {
     private int ID_jobseeker;
 
+    private static ArrayList<JobSeeker> jobSeekerList = new ArrayList<JobSeeker>();
+
     // contructor
-    public Jobseeker(int id, String Username, String Password, String Email, int ID_jobseeker) {
+    public JobSeeker(int id, String Username, String Password, String Email, int ID_jobseeker) {
         super(id, Username, Password, Email);
         this.ID_jobseeker = ID_jobseeker;
+
+        jobSeekerList.add(this);
     }
 
     // getter
@@ -19,7 +25,7 @@ public class Jobseeker extends User {
         this.ID_jobseeker = ID_jobseeker;
     }
 
-    // method
+    // method override
     @Override
     public void login() {
         System.out.println("Login jobseeker");
@@ -30,6 +36,7 @@ public class Jobseeker extends User {
         System.out.println("Logout jobseeker");
     }
 
+    // methodjobseeker
     public void apply() {
         System.out.println("Apply");
         // yang nantinya digunakan untuk melamar pekerjaan dari class Company

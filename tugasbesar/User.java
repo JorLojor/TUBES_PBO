@@ -6,6 +6,7 @@ public abstract class User {
     private String Username;
     private String Password;
     private String Email;
+    private String Status = "offline";// online / offline
 
     // contructor
     public User(int id, String Username, String Password, String Email) {
@@ -32,6 +33,10 @@ public abstract class User {
         return Email;
     }
 
+    public String getStatus() {
+        return Status;
+    }
+
     // setter
 
     public void setId(int id) {
@@ -48,6 +53,10 @@ public abstract class User {
 
     public void setEmail(String Email) {
         this.Email = Email;
+    }
+
+    public void setStatus(String Status) {
+        this.Status = Status;
     }
 
     // method
