@@ -1,13 +1,19 @@
 package tugasbesar;
 
+import java.util.ArrayList;
+
 public class viewer extends User {
     // atribut
     private int ID_viewer;
+
+    private static ArrayList<viewer> viewerList = new ArrayList<viewer>();
 
     // contructor
     public viewer(int id, String Username, String Password, String Email, int ID_viewer) {
         super(id, Username, Password, Email);
         this.ID_viewer = ID_viewer;
+
+        viewerList.add(this);
     }
 
     // getter

@@ -1,6 +1,7 @@
 package tugasbesar;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class JobSeeker extends User {
     private int ID_jobseeker;
@@ -50,7 +51,29 @@ public class JobSeeker extends User {
 
     public void CreteDocument() {
         System.out.println("Create document");
-        // yang nantinya digunakan untuk membuat dokumen lamaran dari class Document
+        int id;
+        String nama;
+        String alamat;
+        int jobExperiece;
+        String deskripsi;
+        System.out.println("masukkan document anda ------------------");
+        Scanner input = new Scanner(System.in);
+        System.out.print("masukkan id: ");
+        id = input.nextInt();
+        System.out.print("masukkan nama: ");
+        nama = input.next();
+        System.out.print("masukkan alamat: ");
+        alamat = input.next();
+        System.out.print("masukkan job experience: ");
+        jobExperiece = input.nextInt();
+        System.out.print("masukkan deskripsi: ");
+        deskripsi = input.next();
+        //
+
+        document documant = new document(id, nama, alamat, jobExperiece, deskripsi);
+
+        documant.submitDocument(getUsername(), getPassword(), getEmail());
+        System.out.println("data berhasil di submit"); //
     }
 
     public void EditDocument() {

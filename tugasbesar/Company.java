@@ -1,16 +1,23 @@
 package tugasbesar;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Company implements Submit {
     private String nama;
     private String alamat;
     private String deskripsi;
     // register nanti disini
 
+    private static ArrayList<Company> companyList = new ArrayList<Company>();
+
     // contructor
     public Company(String nama, String alamat, String deskripsi) {
         this.nama = nama;
         this.alamat = alamat;
         this.deskripsi = deskripsi;
+
+        companyList.add(this);
     }
 
     // getter
@@ -45,7 +52,7 @@ public class Company implements Submit {
 
     @Override
     public void submitData() {
-        System.out.println("Data berhasil di submit");
+       
     }
 
     public void showData() {

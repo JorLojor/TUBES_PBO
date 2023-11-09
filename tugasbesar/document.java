@@ -1,5 +1,7 @@
 package tugasbesar;
 
+import java.util.ArrayList;
+
 public class document {
     // atribut
     private int ID_document;
@@ -7,6 +9,9 @@ public class document {
     private String bidang_keahlian;
     private int Job_experience; // menunjukkan pengalaman kerja dalam tahun
     private String isi; // menunjukkan isi dari dokumen lamaran
+    private Object[] dataDocument = { ID_document, nama, bidang_keahlian, Job_experience, isi };
+
+    private static ArrayList<document> documentList = new ArrayList<document>();
     // contructor
 
     public document(int ID_document, String nama, String bidang_keahlian, int Job_experience, String isi) {
@@ -15,6 +20,8 @@ public class document {
         this.bidang_keahlian = bidang_keahlian;
         this.Job_experience = Job_experience;
         this.isi = isi;
+
+        documentList.add(this);
     }
 
     // getter
@@ -62,10 +69,13 @@ public class document {
 
     // method
 
-    public void submitDocument() {
-        System.out.println("Submit document");
-        // yang nantinya digunakan untuk mengirim dokumen lamaran dari class Document
+    public void submitDocument(String Username, String Password, String Email) {
+        new Registrasi(Username, Password, Email, dataDocument);
+        System.out.println("Submit document berhasil !");
+
     }
 
-    
+    public static void add(document[] dokumen) {
+    }
+
 }
