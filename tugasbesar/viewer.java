@@ -7,6 +7,7 @@ public class viewer extends User implements Submit {
     // atribut
     private int ID_viewer;
     private static ArrayList<viewer> viewerList = new ArrayList<viewer>();
+    // atribut SubmitDocumentViewer berbentuk arraylist
 
     // buatlah sebuag aaraylist yang isinya object untuk di submit
 
