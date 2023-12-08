@@ -6,7 +6,7 @@ public abstract class User {
     private String Username;
     private String Password;
     private String Email;
-    private String Status = "offline";// online / offline
+    private String Status = "offline";
 
     // contructor
     public User(int id, String Username, String Password, String Email) {

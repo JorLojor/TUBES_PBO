@@ -9,15 +9,15 @@ public class Company implements Submit {
     private String deskripsi;
     // register nanti disini
 
-    private static ArrayList<Company> companyList = new ArrayList<Company>();
+    static ArrayList<Company> companyList = new ArrayList<Company>();
 
     // contructor
     public Company(String nama, String alamat, String deskripsi) {
         this.nama = nama;
         this.alamat = alamat;
         this.deskripsi = deskripsi;
+        Company.companyList.add(this);
 
-        companyList.add(this);
     }
 
     // getter
@@ -52,7 +52,7 @@ public class Company implements Submit {
 
     @Override
     public void submitData() {
-       
+
     }
 
     public void showData() {

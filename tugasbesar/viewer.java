@@ -1,12 +1,14 @@
 package tugasbesar;
 
+import java.util.Scanner;
 import java.util.ArrayList;
 
-public class viewer extends User {
+public class viewer extends User implements Submit {
     // atribut
     private int ID_viewer;
-
     private static ArrayList<viewer> viewerList = new ArrayList<viewer>();
+
+    // buatlah sebuag aaraylist yang isinya object untuk di submit
 
     // contructor
     public viewer(int id, String Username, String Password, String Email, int ID_viewer) {
@@ -29,18 +31,56 @@ public class viewer extends User {
     // method
     @Override
     public void login() {
-        System.out.println("Login viewer");
+        for (int i = 0; i < 4; i++) {
+            Scanner input = new Scanner(System.in);
+            System.out.print("Username: ");
+            String username = input.nextLine();
+            System.out.print("Password: ");
+            String password = input.nextLine();
+            input.close();
+
+            for (viewer viewer : viewerList) {
+                if (viewer.getUsername().equals(username) && viewer.getPassword().equals(password)) {
+                    System.out.println("Login berhasil");
+                    setStatus("online");
+                    return;
+                } else {
+                    System.out.println("Username atau password salah silahkan coba lagi");
+
+                }
+            }
+
+        }
+
     }
 
     @Override
     public void logout() {
-        System.out.println("Logout viewer");
+        Scanner input = new Scanner(System.in);
+        System.out.print("Apakah anda yakin ingin logout? (y/n): ");
+        String logout = input.nextLine();
+        input.close();
+
+        if (logout.equals("y")) {
+            setStatus("offline");
+        } else {
+            System.out.println("Batal logout");
+        }
     }
 
     public void DisplayCompany() {
-        System.out.println("View");
-        // yang nantinya digunakan untuk melihat daftar lowongan pekerjaan dari class
-        // Company
+        try {
+            for (Company company : Company.companyList) {
+                company.showData();
+            }
+        } catch (Exception e) {
+            System.out.println("Tidak ada perusahaan yang terdaftar");
+        }
+
+    }
+
+    @Override
+    public void submitData() {
     }
 
 }
